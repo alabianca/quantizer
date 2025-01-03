@@ -29,4 +29,4 @@ func main() {
 ```
 
 ## Example
-<img src="https://github.com/alabianca/quantizer/blob/main/examples/basic/cobi.jpg"/>
+<img src="https://github.com/alabianca/quantizer/blob/main/docs/example_quantization.png"/>

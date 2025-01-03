@@ -17,7 +17,7 @@ func main() {
 		panic(err)
 	}
 	// want to reduce the source image to 256 colors
-	colors := make(color.Palette, 256)
+	colors := make(color.Palette, 8)
 	// imgCpy is the new image containing 256 colors
 	imgCpy, err := mediancut.Quantize(img, colors, mediancut.QuickSelect)
 	if err != nil {
