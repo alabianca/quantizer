@@ -8,7 +8,7 @@ import (
 	"image/png"
 	"os"
 
-	"github.com/alabianca/imageQuant"
+	"github.com/alabianca/quantizer/mediancut"
 )
 
 func main() {
@@ -22,8 +22,8 @@ func main() {
 		panic(err)
 	}
 
-	colors := make([]imageQuant.Point, 8)
-	_, err = imageQuant.Quant(img, colors)
+	colors := make([]mediancut.Point, 8)
+	_, err = mediancut.Quantize(img, colors, mediancut.QuickSelect)
 	if err != nil {
 		panic(err)
 	}
@@ -41,14 +41,14 @@ func main() {
 	drawTheme(colors, im, 200, 200)
 
 	// Save the image as a PNG file
-	f, _ := os.Create("theme.png")
+	f, _ := os.Create("theme_quickselect.png")
 	defer f.Close()
 	png.Encode(f, im)
 
 	fmt.Println("Done!")
 }
 
-func drawTheme(points []imageQuant.Point, img *image.RGBA, xMax, yMax int) {
+func drawTheme(points []mediancut.Point, img *image.RGBA, xMax, yMax int) {
 	for i, c := range points {
 		c := color.RGBA{uint8(c.Red), uint8(c.Green), uint8(c.Blue), 255}
 		yStart := (yMax / len(points)) * i

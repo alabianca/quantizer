@@ -1,0 +1,45 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/alabianca/quantizer/mediancut
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	3865540125 ns/op	29662130616 B/op	48771412 allocs/op
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	3664750166 ns/op	29662129904 B/op	48771405 allocs/op
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	3624357875 ns/op	29662130824 B/op	48771416 allocs/op
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	3760768125 ns/op	29662130392 B/op	48771409 allocs/op
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	3764883250 ns/op	29662130656 B/op	48771413 allocs/op
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	3890305166 ns/op	29662131608 B/op	48771422 allocs/op
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	3768130958 ns/op	29662130992 B/op	48771416 allocs/op
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	3637838375 ns/op	29662130736 B/op	48771414 allocs/op
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	4035853624 ns/op	29662130784 B/op	48771415 allocs/op
+BenchmarkQuantize_8_Colors_MS_3024_4032-11    	       1	3709205876 ns/op	29662130264 B/op	48771408 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 913736980 ns/op	6971943020 B/op	12582991 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 963429604 ns/op	6971942700 B/op	12582988 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 918449895 ns/op	6971942892 B/op	12582990 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 914953480 ns/op	6971942596 B/op	12582987 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 922351708 ns/op	6971942332 B/op	12582984 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 925149833 ns/op	6971942724 B/op	12582988 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 950835188 ns/op	6971942476 B/op	12582986 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 951653438 ns/op	6971942620 B/op	12582987 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 936900458 ns/op	6971942748 B/op	12582988 allocs/op
+BenchmarkQuantize_8_Colors_MS_2048_1536-11    	       2	 921763084 ns/op	6971942300 B/op	12582984 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       1	1091609083 ns/op	2808131432 B/op	12193108 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       2	 839761854 ns/op	2798975596 B/op	12192972 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       2	 840849063 ns/op	2798975828 B/op	12192974 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       2	 837256958 ns/op	2798975664 B/op	12192973 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       2	 842583104 ns/op	2798975668 B/op	12192972 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       2	 839455688 ns/op	2798975996 B/op	12192976 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       2	 839167667 ns/op	2798975876 B/op	12192975 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       2	 844105208 ns/op	2798975692 B/op	12192973 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       2	 838953208 ns/op	2798975964 B/op	12192976 allocs/op
+BenchmarkQuantize_8_Colors_QS_3024_4032-11    	       2	 856273729 ns/op	2798975924 B/op	12192977 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 235006433 ns/op	729397726 B/op	 3145799 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 231925542 ns/op	729397764 B/op	 3145800 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 232791950 ns/op	729397668 B/op	 3145798 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 233618683 ns/op	729397492 B/op	 3145797 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 238695500 ns/op	729397768 B/op	 3145799 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 230434367 ns/op	729397742 B/op	 3145799 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 232297650 ns/op	729398030 B/op	 3145802 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 230927775 ns/op	729397777 B/op	 3145800 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 238642425 ns/op	729397867 B/op	 3145801 allocs/op
+BenchmarkQuantize_8_Colors_QS_2048_1536-11    	       5	 251024442 ns/op	729397796 B/op	 3145800 allocs/op
+PASS
+ok  	github.com/alabianca/quantizer/mediancut	160.303s

@@ -5,7 +5,7 @@ import (
 	"image/jpeg"
 	"os"
 
-	"github.com/alabianca/quantizer"
+	"github.com/alabianca/quantizer/mediancut"
 )
 
 func main() {
@@ -16,14 +16,14 @@ func main() {
 		panic(err)
 	}
 	// want to reduce the source image to 256 colors
-	colors := make([]quantizer.Point, 256)
+	colors := make([]mediancut.Point, 256)
 	// imgCpy is the new image containing 256 colors
-	imgCpy, err := quantizer.Quant(img, colors)
+	imgCpy, err := mediancut.Quantize(img, colors, mediancut.QuickSelect)
 	if err != nil {
 		panic(err)
 	}
 
-	out, _ := os.Create("output.jpeg")
+	out, _ := os.Create("output_quickselect.jpeg")
 	defer out.Close()
 
 	if err := jpeg.Encode(out, imgCpy, nil); err != nil {

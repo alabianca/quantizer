@@ -1,0 +1,25 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/alabianca/quantizer
+BenchmarkQuantize-11    	       1	6085189666 ns/op	56516131472 B/op	121928029 allocs/op
+BenchmarkQuantize-11    	       1	6051897792 ns/op	56516131376 B/op	121928028 allocs/op
+BenchmarkQuantize-11    	       1	6461056751 ns/op	56516130368 B/op	121928018 allocs/op
+BenchmarkQuantize-11    	       1	6256840417 ns/op	56516131112 B/op	121928026 allocs/op
+BenchmarkQuantize-11    	       1	6184213126 ns/op	56516130816 B/op	121928022 allocs/op
+BenchmarkQuantize-11    	       1	6087908000 ns/op	56516130960 B/op	121928026 allocs/op
+BenchmarkQuantize-11    	       1	6284686750 ns/op	56516131040 B/op	121928025 allocs/op
+BenchmarkQuantize-11    	       1	6195937958 ns/op	56516131208 B/op	121928027 allocs/op
+BenchmarkQuantize-11    	       1	6208355083 ns/op	56516130544 B/op	121928021 allocs/op
+BenchmarkQuantize-11    	       1	6205543292 ns/op	56516131608 B/op	121928032 allocs/op
+BenchmarkQuantize-11    	       1	6141875959 ns/op	56516130576 B/op	121928020 allocs/op
+BenchmarkQuantize-11    	       1	6602203876 ns/op	56516131048 B/op	121928025 allocs/op
+BenchmarkQuantize-11    	       1	6364547416 ns/op	56516131016 B/op	121928026 allocs/op
+BenchmarkQuantize-11    	       1	6303759043 ns/op	56516130472 B/op	121928020 allocs/op
+BenchmarkQuantize-11    	       1	6404835916 ns/op	56516130192 B/op	121928016 allocs/op
+BenchmarkQuantize-11    	       1	6278105000 ns/op	56516130208 B/op	121928017 allocs/op
+BenchmarkQuantize-11    	       1	6374989208 ns/op	56516131200 B/op	121928027 allocs/op
+BenchmarkQuantize-11    	       1	6421386084 ns/op	56516130624 B/op	121928020 allocs/op
+BenchmarkQuantize-11    	       1	6357051667 ns/op	56516130928 B/op	121928023 allocs/op
+BenchmarkQuantize-11    	       1	6499536874 ns/op	56516131520 B/op	121928030 allocs/op
+PASS
+ok  	github.com/alabianca/quantizer	244.343s

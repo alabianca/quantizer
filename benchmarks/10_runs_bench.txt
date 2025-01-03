@@ -1,0 +1,25 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/alabianca/quantizer
+BenchmarkQuantize_3024_4032-11    	       1	3643152418 ns/op	29662130464 B/op	48771411 allocs/op
+BenchmarkQuantize_3024_4032-11    	       1	3897483624 ns/op	29662130744 B/op	48771415 allocs/op
+BenchmarkQuantize_3024_4032-11    	       1	3712712459 ns/op	29662130624 B/op	48771413 allocs/op
+BenchmarkQuantize_3024_4032-11    	       1	3781889083 ns/op	29662129896 B/op	48771406 allocs/op
+BenchmarkQuantize_3024_4032-11    	       1	3727793667 ns/op	29662130528 B/op	48771412 allocs/op
+BenchmarkQuantize_3024_4032-11    	       1	3695820291 ns/op	29662131344 B/op	48771420 allocs/op
+BenchmarkQuantize_3024_4032-11    	       1	3905495083 ns/op	29662131568 B/op	48771422 allocs/op
+BenchmarkQuantize_3024_4032-11    	       1	3754559459 ns/op	29662131104 B/op	48771418 allocs/op
+BenchmarkQuantize_3024_4032-11    	       1	3875397458 ns/op	29662130456 B/op	48771410 allocs/op
+BenchmarkQuantize_3024_4032-11    	       1	3706984834 ns/op	29662130768 B/op	48771414 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 929566521 ns/op	6971942652 B/op	12582987 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 898178562 ns/op	6971942940 B/op	12582990 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 902604688 ns/op	6971942964 B/op	12582990 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 908523124 ns/op	6971942452 B/op	12582985 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 911993792 ns/op	6971942636 B/op	12582987 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 917463708 ns/op	6971942444 B/op	12582985 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 914961313 ns/op	6971942484 B/op	12582985 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 917760438 ns/op	6971943076 B/op	12582991 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 921895000 ns/op	6971942772 B/op	12582988 allocs/op
+BenchmarkQuantize_2048_1536-11    	       2	 952498042 ns/op	6971942596 B/op	12582986 allocs/op
+PASS
+ok  	github.com/alabianca/quantizer	102.666s
