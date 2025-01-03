@@ -4,7 +4,7 @@ import "testing"
 
 func TestMergeSort(t *testing.T) {
 	// Point{X,Y,R,G,B}
-	var image = [][]Point{
+	var image = [][]point{
 		{{0, 0, 120, 200, 150}, {0, 0, 10, 50, 255}, {0, 0, 200, 0, 100}},
 		{{0, 0, 15, 25, 35}, {0, 0, 75, 85, 95}, {0, 0, 135, 145, 155}},
 		{{0, 0, 5, 10, 15}, {0, 0, 25, 35, 45}, {0, 0, 55, 65, 75}},
@@ -15,7 +15,7 @@ func TestMergeSort(t *testing.T) {
 		t.Fatalf("expected length %d but got %d", 9, len(points))
 	}
 	sorted := sortByColorChannel(red, points)
-	expected := []Point{
+	expected := []point{
 		{0, 0, 5, 10, 15},
 		{0, 0, 10, 50, 255},
 		{0, 0, 15, 25, 35},
@@ -34,8 +34,8 @@ func TestMergeSort(t *testing.T) {
 	}
 }
 
-func flatten(img [][]Point) []Point {
-	var flattened []Point
+func flatten(img [][]point) []point {
+	var flattened []point
 	for _, row := range img {
 		flattened = append(flattened, row...)
 	}

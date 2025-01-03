@@ -1,6 +1,7 @@
 package mediancut_test
 
 import (
+	"image/color"
 	"image/jpeg"
 	"os"
 	"testing"
@@ -15,7 +16,7 @@ func BenchmarkQuantize_8_Colors_MS_3024_4032(b *testing.B) {
 	img, _ := jpeg.Decode(reader)
 	for i := 0; i < b.N; i++ {
 		b.StopTimer()
-		colors := make([]mediancut.Point, 8)
+		colors := make(color.Palette, 8)
 		b.StartTimer()
 		_, err := mediancut.Quantize(img, colors, mediancut.MergeSort)
 		if err != nil {
@@ -31,7 +32,7 @@ func BenchmarkQuantize_8_Colors_MS_2048_1536(b *testing.B) {
 	img, _ := jpeg.Decode(reader)
 	for i := 0; i < b.N; i++ {
 		b.StopTimer()
-		colors := make([]mediancut.Point, 8)
+		colors := make(color.Palette, 8)
 		b.StartTimer()
 		_, err := mediancut.Quantize(img, colors, mediancut.MergeSort)
 		if err != nil {
@@ -47,7 +48,7 @@ func BenchmarkQuantize_8_Colors_QS_3024_4032(b *testing.B) {
 	img, _ := jpeg.Decode(reader)
 	for i := 0; i < b.N; i++ {
 		b.StopTimer()
-		colors := make([]mediancut.Point, 8)
+		colors := make(color.Palette, 8)
 		b.StartTimer()
 		_, err := mediancut.Quantize(img, colors, mediancut.QuickSelect)
 		if err != nil {
@@ -63,7 +64,7 @@ func BenchmarkQuantize_8_Colors_QS_2048_1536(b *testing.B) {
 	img, _ := jpeg.Decode(reader)
 	for i := 0; i < b.N; i++ {
 		b.StopTimer()
-		colors := make([]mediancut.Point, 8)
+		colors := make(color.Palette, 8)
 		b.StartTimer()
 		_, err := mediancut.Quantize(img, colors, mediancut.QuickSelect)
 		if err != nil {

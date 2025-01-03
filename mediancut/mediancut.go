@@ -22,7 +22,7 @@ const (
 	blue
 )
 
-type Point struct {
+type point struct {
 	X     int
 	Y     int
 	Red   uint32
@@ -30,19 +30,15 @@ type Point struct {
 	Blue  uint32
 }
 
-type Quantizer struct {
-	Kind Algorithm
-}
-
-func Quantize(src image.Image, colors []Point, algo Algorithm) (image.Image, error) {
+func Quantize(src image.Image, palette color.Palette, algo Algorithm) (image.Image, error) {
 	pixels := imageToBucket(src)
-	buckets := make([][]Point, len(colors))
+	buckets := make([][]point, len(palette))
 	index := 0
 
-	medianCut(pixels, buckets, &index, 0, len(colors)-1, algo)
+	medianCut(pixels, buckets, &index, 0, len(palette)-1, algo)
 
-	colorPalette := make(color.Palette, len(colors))
-	paletted := image.NewPaletted(src.Bounds(), colorPalette)
+	//colorPalette := make(color.Palette, len(pa))
+	paletted := image.NewPaletted(src.Bounds(), palette)
 	// calculate the average r,g,b for each bucket and use that average
 	// at the color. Let's also fill in the paletted image
 	for i, bucket := range buckets {
@@ -54,13 +50,7 @@ func Quantize(src image.Image, colors []Point, algo Algorithm) (image.Image, err
 		}
 
 		l := int64(len(bucket))
-		colors[i] = Point{
-			Red:   uint32((sumRed / l) >> 8),
-			Green: uint32((sumGreen / l) >> 8),
-			Blue:  uint32((sumBlue / l) >> 8),
-		}
-
-		colorPalette[i] = color.NRGBA64{
+		palette[i] = color.NRGBA64{
 			R: uint16(sumRed / l),
 			G: uint16(sumGreen / l),
 			B: uint16(sumBlue / l),
@@ -80,25 +70,25 @@ func Quantize(src image.Image, colors []Point, algo Algorithm) (image.Image, err
 	), nil
 }
 
-func imageToBucket(img image.Image) []Point {
+func imageToBucket(img image.Image) []point {
 	bounds := img.Bounds()
 	// todo. I probably know the size here
-	out := make([]Point, 0)
+	out := make([]point, 0)
 
 	for y := bounds.Min.Y; y < bounds.Max.Y; y++ {
 		for x := bounds.Min.X; x < bounds.Max.X; x++ {
 			r, g, b, _ := img.At(x, y).RGBA()
-			out = append(out, Point{x, y, r, g, b})
+			out = append(out, point{x, y, r, g, b})
 		}
 	}
 
 	return out
 }
 
-func medianCut(pixels []Point, buckets [][]Point, index *int, depth, ncolors int, algo Algorithm) {
+func medianCut(pixels []point, buckets [][]point, index *int, depth, ncolors int, algo Algorithm) {
 	// base case
 	if float64(depth) >= math.Log2(float64(ncolors)) {
-		buckets[*index] = make([]Point, len(pixels))
+		buckets[*index] = make([]point, len(pixels))
 		copy(buckets[*index], pixels)
 		*index++
 		return
@@ -130,7 +120,7 @@ func medianCut(pixels []Point, buckets [][]Point, index *int, depth, ncolors int
 
 // greatestRange finds the channel (red, green or blue)
 // with the greates range
-func greatestRange(pts []Point) int {
+func greatestRange(pts []point) int {
 	var maxRed uint32
 	var maxGreen uint32
 	var maxBlue uint32

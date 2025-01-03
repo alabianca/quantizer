@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/base64"
 	"image"
+	"image/color"
 	"image/jpeg"
 	"os"
 	"testing"
@@ -17,53 +18,21 @@ func TestQuantizer(t *testing.T) {
 
 	img, _ := jpeg.Decode(reader)
 
-	colors := make([]mediancut.Point, 8)
+	colors := make(color.Palette, 8)
 	_, err := mediancut.Quantize(img, colors, mediancut.QuickSelect)
 	if err != nil {
 		t.Fatalf("expected error to be nil, but got %s", err)
 	}
 
-	expected := []mediancut.Point{
-		{
-			Red:   8,
-			Green: 8,
-			Blue:  25,
-		},
-		{
-			Red:   35,
-			Green: 38,
-			Blue:  33,
-		},
-		{
-			Red:   52,
-			Green: 54,
-			Blue:  60,
-		},
-		{
-			Red:   70,
-			Green: 85,
-			Blue:  122,
-		},
-		{
-			Red:   108,
-			Green: 79,
-			Blue:  90,
-		},
-		{
-			Red:   144,
-			Green: 124,
-			Blue:  102,
-		},
-		{
-			Red:   110,
-			Green: 128,
-			Blue:  182,
-		},
-		{
-			Red:   151,
-			Green: 170,
-			Blue:  209,
-		},
+	expected := []color.NRGBA64{
+		{R: 2170, G: 2245, B: 6551, A: 65535},
+		{R: 9167, G: 9776, B: 8680, A: 65535},
+		{R: 13362, G: 13844, B: 15580, A: 65535},
+		{R: 17930, G: 21998, B: 31464, A: 65535},
+		{R: 27682, G: 20339, B: 23124, A: 65535},
+		{R: 37046, G: 31858, B: 26350, A: 65535},
+		{R: 28252, G: 32785, B: 46721, A: 65535},
+		{R: 38702, G: 43612, B: 53714, A: 65535},
 	}
 
 	for i, c := range colors {
@@ -72,15 +41,17 @@ func TestQuantizer(t *testing.T) {
 
 }
 
-func verifyColor(c mediancut.Point, expected mediancut.Point, t *testing.T) {
-	if c.Red != expected.Red {
-		t.Fatalf("expected Red %d, but got %d", c.Red, expected.Red)
+func verifyColor(c color.Color, expected color.Color, t *testing.T) {
+	r, g, b, _ := c.RGBA()
+	re, ge, be, _ := expected.RGBA()
+	if r != re {
+		t.Fatalf("expected Red %d, but got %d", r, re)
 	}
-	if c.Green != expected.Green {
-		t.Fatalf("expected Green %d, but got %d", c.Green, expected.Green)
+	if g != ge {
+		t.Fatalf("expected Green %d, but got %d", g, ge)
 	}
-	if c.Blue != expected.Blue {
-		t.Fatalf("expected Blue %d, but got %d", c.Blue, expected.Blue)
+	if b != be {
+		t.Fatalf("expected Blue %d, but got %d", b, be)
 	}
 }
 

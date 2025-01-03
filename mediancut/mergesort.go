@@ -1,10 +1,10 @@
 package mediancut
 
-func sortByColorChannel(channel int, pts []Point) []Point {
+func sortByColorChannel(channel int, pts []point) []point {
 	return mergeSort(pts, channel)
 }
 
-func mergeSort(items []Point, channel int) []Point {
+func mergeSort(items []point, channel int) []point {
 	var ln = len(items)
 
 	if ln == 1 {
@@ -18,8 +18,8 @@ func mergeSort(items []Point, channel int) []Point {
 	return merge(mergeSort(left, channel), mergeSort(right, channel), channel)
 }
 
-func merge(left, right []Point, channel int) (result []Point) {
-	result = make([]Point, len(left)+len(right))
+func merge(left, right []point, channel int) (result []point) {
+	result = make([]point, len(left)+len(right))
 
 	i, j, k := 0, 0, 0
 	for i < len(left) && j < len(right) {
@@ -51,7 +51,7 @@ func merge(left, right []Point, channel int) (result []Point) {
 }
 
 // getChannelFromPoint returns the red,green or blue channel from Point
-func getChannelFromPoint(channel int, p Point) uint32 {
+func getChannelFromPoint(channel int, p point) uint32 {
 	c := p.Red
 	switch channel {
 	case green:

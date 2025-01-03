@@ -1,6 +1,6 @@
 package mediancut
 
-func partition(points []Point, channel int, left, right int) int {
+func partition(points []point, channel int, left, right int) int {
 	pivot := getChannelFromPoint(channel, points[right]) // Use the rightmost element as the pivot
 	i := left - 1
 
@@ -14,7 +14,7 @@ func partition(points []Point, channel int, left, right int) int {
 	return i + 1
 }
 
-func quickselect(points []Point, left, right, k int, channel int) {
+func quickselect(points []point, left, right, k int, channel int) {
 	if left >= right {
 		return
 	}

@@ -3,7 +3,7 @@ package mediancut
 import "testing"
 
 func TestQuickSelect(t *testing.T) {
-	var image = [][]Point{
+	var image = [][]point{
 		{{0, 0, 120, 200, 150}, {0, 0, 10, 50, 255}, {0, 0, 200, 0, 100}},
 		{{0, 0, 15, 25, 35}, {0, 0, 75, 85, 95}, {0, 0, 135, 145, 155}},
 		{{0, 0, 5, 10, 15}, {0, 0, 25, 35, 45}, {0, 0, 55, 65, 75}},

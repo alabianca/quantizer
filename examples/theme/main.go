@@ -22,7 +22,7 @@ func main() {
 		panic(err)
 	}
 
-	colors := make([]mediancut.Point, 8)
+	colors := make(color.Palette, 8)
 	_, err = mediancut.Quantize(img, colors, mediancut.QuickSelect)
 	if err != nil {
 		panic(err)
@@ -48,10 +48,10 @@ func main() {
 	fmt.Println("Done!")
 }
 
-func drawTheme(points []mediancut.Point, img *image.RGBA, xMax, yMax int) {
-	for i, c := range points {
-		c := color.RGBA{uint8(c.Red), uint8(c.Green), uint8(c.Blue), 255}
-		yStart := (yMax / len(points)) * i
+func drawTheme(colors color.Palette, img *image.RGBA, xMax, yMax int) {
+	for i, c := range colors {
+		//c := color.RGBA{uint8(c.Red), uint8(c.Green), uint8(c.Blue), 255}
+		yStart := (yMax / len(colors)) * i
 		for x := 0; x < xMax; x++ {
 			for y := yStart; y < yMax; y++ {
 				img.Set(x, y, c)
