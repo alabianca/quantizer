@@ -87,3 +87,14 @@ func drawTheme(colors color.Palette, img *image.RGBA, xMax, yMax int) {
 
 ### Result
 <img src="https://github.com/alabianca/quantizer/blob/main/examples/theme/theme.png"/>
+
+## Todo
+- [ ] More examples. Would love to see an example of how it's used in a web browser. Just for fun
+- [ ] Support more quantization algorithms
+	- [ ] K-means clustering
+	- [ ] Octree quantization
+	- [ ] Lloyd's algorithm
+	- [ ] Uniform Quantization
+	- [ ] Principal Component Analysis (PCA) for color reduction
+	- [ ] Spatial Quantization (Populatiry Algorithm)
+	- [ ] Others?
